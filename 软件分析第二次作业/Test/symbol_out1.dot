@@ -1,0 +1,14 @@
+digraph "int test(int,int)" {
+    label="int test(int,int)";
+    node [shape=box];
+    "0" [style=filled,fillcolor=gray,label="this := @this\lx := @parameter0\ly := @parameter1\lif x > 0 goto label0\l",];
+    "1" [label="goto label1\l",];
+    "0"->"1";
+    "2" [label="label0:\nnop\ltemp$0 = x\ltemp$1 = temp$0 + 10\lx = temp$1\ltemp$2 = x / 5\lz = temp$2\lgoto label2\l",];
+    "0"->"2";
+    "3" [label="label1:\nnop\ltemp$3 = x / 5\ltemp$4 = temp$3\ltemp$5 = temp$4 + 2\lz = temp$5\ltemp$6 = x\ltemp$7 = temp$6 + 10\lx = temp$7\l",];
+    "1"->"3";
+    "4" [style=filled,fillcolor=lightgray,label="label2:\nnop\ltemp$8 = z\ltemp$9 = temp$8 + y\lz = temp$9\lreturn z\l",];
+    "2"->"4";
+    "3"->"4";
+}
